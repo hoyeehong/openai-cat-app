@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import DOMPurify from "dompurify";
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -24,7 +25,8 @@ function App() {
         style={{ width: "50%" }}
         type="text"
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        placeholder="Message Cat Chatbot..."
+        onChange={(e) => setInput(DOMPurify.sanitize(e.target.value))}
       />
       <button onClick={handleSendMessage} width="800%">
         Send
