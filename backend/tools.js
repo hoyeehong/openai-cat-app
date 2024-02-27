@@ -15,6 +15,10 @@ const tools = [
             type: "string",
             description: "The cat breed",
           },
+          number: {
+            type: "number",
+            description: "The number of cats",
+          },
         },
         required: ["query"],
       },
